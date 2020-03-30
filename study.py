@@ -72,7 +72,7 @@ def autoJob(tv, sleep_time, sum=6, click=True):
                     all_of_list.append(txt)
                     print("正在" + tv + "...", txt)
                     if click:
-                        random_sleep(sleep_time)
+                        random_sleep(sleep_time + random.randint(0, 9))
                     else:
                         time.sleep(sleep_time)
                         time.sleep(random.randint(0, 20))
@@ -89,7 +89,7 @@ def watch_local():
     time.sleep(2)
     driver(text='北京卫视').click()
     print("观看本地频道...")
-    time.sleep(30)
+    time.sleep(30 + random.randint(0, 9))
     print("本地频道结束")
     driver.press.back()
 
@@ -134,7 +134,7 @@ def watch_video():
     np.save('db.npy', text_list)
 
     print("正在观看新闻联播...")
-    time.sleep(1050)
+    time.sleep(1050 + random.randint(0, 20))
     driver.press('back')
     print("观看视频结束.")
 
